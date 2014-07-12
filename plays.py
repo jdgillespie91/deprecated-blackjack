@@ -1,20 +1,16 @@
 # Checks a hand for blackjack. Returns 1 if blackjack and 0 otherwise.
 def check_blackjack(hand):
-    if 10 in hand[0]:
-        if 11 in hand[1]:
-            return 1
-    elif 11 in hand[0]:
-        if 10 in hand[1]:
-            return 1
+    if hand[0][2]+hand[1][2] == 21:
+        return 1
     else:
-        return 0
+        return 0      
         
 # Counts the number of hard aces in a hand.
 def number_of_hard_aces(hand):
     number_of_hard_aces = 0
     
-    for i in hand:
-        if 11 in i:
+    for card in hand:
+        if card[2]==11:
             number_of_hard_aces += 1
             
     return number_of_hard_aces
@@ -56,12 +52,12 @@ def dealer_play(playing_deck, hand):
                     if total == 17:
                         print 'total = 17'
                         for i in hand:
-                            if 11 in i:
+                            if i[2]==11:
                                 print 'Change ace.'
                             else:
                                 print 'Hand does not need to change.'
                                 outcome = total
-                                break
+                                return outcome
                     else:
                         print 'total > 17 (and less than or equal to 21).'
                         outcome = total
