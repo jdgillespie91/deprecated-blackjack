@@ -9,8 +9,8 @@ def check_blackjack(hand):
 def number_of_hard_aces(hand):
     number_of_hard_aces = 0
     
-    for i in hand:
-        if 11 in i:
+    for card in hand:
+        if card[2]==11:
             number_of_hard_aces += 1
             
     return number_of_hard_aces
@@ -52,12 +52,12 @@ def dealer_play(playing_deck, hand):
                     if total == 17:
                         print 'total = 17'
                         for i in hand:
-                            if 11 in i:
+                            if i[2]==11:
                                 print 'Change ace.'
                             else:
                                 print 'Hand does not need to change.'
                                 outcome = total
-                                break
+                                return outcome
                     else:
                         print 'total > 17 (and less than or equal to 21).'
                         outcome = total
