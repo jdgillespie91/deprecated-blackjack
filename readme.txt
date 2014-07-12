@@ -1,8 +1,8 @@
 Blackjack 1.0
 
---------
+---------------------------------------------
 Contents
---------
+---------------------------------------------
 
 1. Introduction
 2. Rules
@@ -14,15 +14,15 @@ Contents
 
 
 
----------------
+---------------------------------------------
 1. Introduction
----------------
+---------------------------------------------
 
 We aim to create a learning algorithm that will find empirically the optimal blackjack strategy.
 
---------
+---------------------------------------------
 2. Rules
---------
+---------------------------------------------
 
 In order to build the game, we begin with a simplified version of the rules. We will add features as appropriate. With that in mind, a description of the rules is given (this description should be updated as features are added).
 
@@ -48,29 +48,37 @@ Totals are then compared. If the player has the higher total, the player keeps h
 
 See http://en.wikipedia.org/wiki/Blackjack#Rules_of_play_at_casinos for the rules that we will ultimately follow. The one key difference is that betting on other players is disregarded. 
 
--------------
+---------------------------------------------
 3. Our Objectives
--------------
+---------------------------------------------
 
 Broadly speaking, we have two objectives; first, write the blackjack game, and second, write the learning algorithm.
 
------------------------
+--------------------------------
 3.a. The Blackjack Game
------------------------
+--------------------------------             
 
 The development of the game should be broken down into the following modules (each module should be independent of the others and hence can be worked on individually):
 
---------------------------
-3.a.i. Create Playing Deck
---------------------------
+-------------------             
+3.a.i. Deal
+-------------------
 
-Create a (to do: decide on appropriate data structure) of the appropriate length (52 * number of decks) and store card values. Randomly sort the (to do: decide on appropriate data structure) and return it as the playing deck. 
+The deal will give two cards to the dealer and each player. The players' cards and the first of the dealer's cards will be revealed to the table. The number of players and decks is variable and is input by the user.
 
-Note that the number of decks should be variable.
+See deal.py for the relevant functions in this module.
 
-------------
+get_number_of_players returns an integer between one and seven based on user input. After three attemps, the value will default to three automatically.
+
+get_number_of_decks returns an integer between one and eight based on user input. After three attemps, the value will default to three automatically.
+
+create_playing_deck takes the number of decks in play as an argument and returns a shuffled list of lists that is the playing deck. Each inner list corresponds to a card and contains four elements; the first is the rank, the second is the suit, the third is the value and the fourth is a unique identifier. The meanings of the first three are as you would expect (although it should be noted that Aces begin with the value of 11 and are decreased to 1 if necessary). The fourth is to ensure that the deck is built correctly and used only for debugging purposes.
+
+deal_playing_deck takes a playing deck and number of players as arguments, deals as appropriate and prints the required information.
+
+-------------------
 3.a.ii. Deal
-------------
+-------------------
 
 Using the playing deck, deal the cards according to blackjack rules. 
 
@@ -78,7 +86,7 @@ Note that the number of players should be variable.
 
 
 
----------
+---------------------------------------------
 Footnotes
----------
+---------------------------------------------
 [1] According to http://en.wikipedia.org/wiki/Blackjack#Rule_variations_and_their_consequences_for_the_house_edge, this gives the dealer an edge compared to if he were to stand on soft 17. Dealing with the worst-case scenario is good for us (since the performance of any strategy we find can then only improve).

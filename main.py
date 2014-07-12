@@ -3,18 +3,20 @@ from playing_deck import *
 from plays import *
 
 # Determine number of players based on user input.
-# number_of_players = get_number_of_players()
-number_of_players = 3
+number_of_players = get_number_of_players()
+# number_of_players = 3
 
 # Determine number of decks based on user input.
-# number_of_decks = get_number_of_decks()
-number_of_decks = 3
+number_of_decks = get_number_of_decks()
+# number_of_decks = 3
 
 # Create playing deck.
 playing_deck = create_playing_deck(number_of_decks)
 
 # Deal hands.
-list_of_hands = deal(playing_deck, number_of_players)
+list_of_hands = deal_playing_deck(playing_deck, number_of_players)
+
+wait = input("\nTemporary pause (prevents continuous execution of the dealer bit).")
 
 # Fix hand.
 print list_of_hands[number_of_players]
