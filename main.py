@@ -16,6 +16,16 @@ playing_deck = create_playing_deck(number_of_decks)
 # Deal hands.
 list_of_hands = deal_playing_deck(playing_deck, number_of_players)
 
+list_of_hands[0][0] = ['A', u'\u2662', 11, 1]
+list_of_hands[0][1] = ['9', u'\u2662', 9, 2]
+
+finished = False
+
+while not finished:
+    return_value = turn(playing_deck, list_of_hands[0])
+    finished = return_value[0]
+    hand = return_value[1]
+
 wait = input("\nTemporary pause (prevents continuous execution of the dealer bit).")
 
 # Fix hand.

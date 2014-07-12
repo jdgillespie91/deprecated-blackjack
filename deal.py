@@ -52,7 +52,6 @@ def get_number_of_decks():
 
     return number_of_decks
     
-
 from random import shuffle
 def create_playing_deck(number_of_decks):
     playing_deck = []
@@ -80,7 +79,6 @@ def create_playing_deck(number_of_decks):
     shuffle(playing_deck)
     
     return playing_deck    
-
 
 from random_functions import *
 def deal_playing_deck(playing_deck, number_of_players):
