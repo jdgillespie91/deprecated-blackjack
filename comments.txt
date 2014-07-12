@@ -1,0 +1,32 @@
+Here are my issues and comments on the code so far. What I have observed may be incorrect and there may be things that are incorrect that I have not observed, but hopefully it helps
+
+plays.py
+-----------
+
+- Both stand() and is_bust() use code for calculating card total, could this be moved to its own function (albeit very simple)
+
+- check_blackjack() is named ambiguously - change this to is_blackjack() or equivalent to show what your expected output
+
+- check_blackjack() returns 0 or 1 but using Python's True and False would be clearer to show what you actually mean (although they do evaluate to 0 and 1)
+
+- Is number_of_hard_aces() helpful? Can you have more than one hard ace? Once you have one hard ace then the only valid thing to do is to consider any subsequent aces to be soft, I think (Not necessarily an issue but worth considering I think)
+
+- turn() could use some kind of comment to explain why you only allow three attempts at entering your decision. The value three is also hard-coded in three separate places. Using an appropriately named variable instead could clear this up
+
+- dealer_play() looks a bit unwieldy. I think the logic for handling hard/soft aces could be moved elsewhere as it seems to convolute every piece of code that it touches. I'm not sure exactly how to change it but since you are returning one of three states, maybe there is a way to move the code from here to separate functions such that this function is basically only evaluating which of the three to return
+
+deal.py
+-----------
+
+- get_number_of_players()/get_number_of_decks() both use the same structure as in turn() and so the same applies. Also since the code is almost exactly the same, maybe you could abstract this to an input function that takes e.g min/max input, number of attempts and messages to the user
+
+- create_playing_deck() creates a card/deck representation that seems fairly redundant - giving each card an ID from 0 - 51 would suffice instead of the three values given. This would need new functions for displaying a card and it's value and also evaluating a card's value based on its ID but it would most likely end up cleaner and easier to follow/work with
+
+- I've heard "from foo import *" is not great practice, especially if you know exactly what you need to import. I don't know why. But maybe that's worth looking into
+
+- The loop in deal_playing_deck() seems unnecessarily simplified. If you loop over every player (incl. the dealer) and also every card it would be an extra loop but the code may be simpler and easier to follow 
+
+main.py
+------------
+
+- The values that you compare outcome to are not obvious. Either explain in comments or add in variables to make it clear i.e. set BLACKJACK = 1, then check outcome == BLACKJACK, BUST = 2, check outcome == BUST etc.
