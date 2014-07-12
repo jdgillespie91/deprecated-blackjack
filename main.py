@@ -22,12 +22,14 @@ list_of_totals = [None]*number_of_players
 for player in range(number_of_players):
     print "\n\nPlayer {0}'s turn".format(player)
     player_hand = list_of_hands[player]
-    print_hand(player_hand)
+    #print_hand(player_hand)
     player_finished = False
     while not player_finished:
+        display_current_state(list_of_hands,player)
         return_value = turn(playing_deck, player_hand)
         player_finished = return_value[0]
         hand = return_value[1]
+        
     list_of_totals[player] = get_total(hand)
 
 raw_input("\nPress enter for dealer's turn.")
@@ -52,7 +54,8 @@ else:
     print 'Error: outcome has taken an unexpected value.'
 print '\n'
 
-#Display results of game#
+#Display results of game
+#Issue - doesn't handle bust dealer+bust player combo well
 for player in range(number_of_players):
     player_total = list_of_totals[player]
     if 21>=player_total>=outcome:

@@ -91,13 +91,5 @@ def deal_playing_deck(playing_deck, number_of_players):
         card_index = i/number_of_hands
         list_of_hands[player_index][card_index] = playing_deck[0]
         del playing_deck[0]
-    
-    for i in xrange(number_of_players):
-        print 'Player ' + str(i+1) + ':',
-        print_hand(list_of_hands[i])
-    
-    print 'Dealer:  ',
-    print_card(list_of_hands[number_of_players], 0)
-    print u'\u25A0' u'\u25A0'
         
     return list_of_hands
