@@ -76,14 +76,6 @@ create_playing_deck takes the number of decks in play as an argument and returns
 
 deal_playing_deck takes a playing deck and number of players as arguments, deals as appropriate and prints the required information.
 
--------------------
-3.a.ii. Deal
--------------------
-
-Using the playing deck, deal the cards according to blackjack rules. 
-
-Note that the number of players should be variable.
-
 
 
 ---------------------------------------------
