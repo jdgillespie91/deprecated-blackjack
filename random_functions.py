@@ -12,6 +12,13 @@ def get_total(hand):
         total += card[2]
     return total
 
+# For windows users, if os.system('clear') causes problems, try commenting it out and using os.system('cls') instead. If that doesn't work also, just comment out both.
+import os
+def clear_screen():
+    raw_input("Press Enter to continue...")
+    os.system('clear')
+    # os.system('cls')
+
 def display_current_state(list_of_hands, current_player):
     #clear() #would be nice to clear the console here
     no_of_players = len(list_of_hands)-1

@@ -3,14 +3,13 @@ from playing_deck import *
 from plays import *
 
 # Determine number of players based on user input.
-# number_of_players = get_number_of_players()
-number_of_players = 4
 number_of_players = get_number_of_players()
-# number_of_players = 3
 
 # Determine number of decks based on user input.
 number_of_decks = get_number_of_decks()
-# number_of_decks = 3
+
+# Clear screen after user presses enter.
+clear_screen()
 
 # Create playing deck.
 playing_deck = create_playing_deck(number_of_decks)
@@ -18,9 +17,10 @@ playing_deck = create_playing_deck(number_of_decks)
 # Deal hands.
 list_of_hands = deal_playing_deck(playing_deck, number_of_players)
 
+# Players' turns.
 list_of_totals = [None]*number_of_players
-for player in range(number_of_players):
-    print "\n\nPlayer {0}'s turn".format(player)
+for player in xrange(number_of_players):
+    print "Player {0}'s turn".format(player)
     player_hand = list_of_hands[player]
     #print_hand(player_hand)
     player_finished = False
@@ -29,9 +29,11 @@ for player in range(number_of_players):
         return_value = turn(playing_deck, player_hand)
         player_finished = return_value[0]
         hand = return_value[1]
+    clear_screen()
         
     list_of_totals[player] = get_total(hand)
 
+# Dealer's turn.
 raw_input("\nPress enter for dealer's turn.")
 
 # Fix hand.
