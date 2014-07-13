@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 def print_hand(hand):
     for i in xrange(len(hand)):
         print_card(hand,i)
@@ -16,8 +17,30 @@ def get_total(hand):
 import os
 def clear_screen():
     raw_input("Press Enter to continue...")
-    os.system('clear')
-    # os.system('cls')
+    if (os.name) == 'posix':
+            os.system('clear')
+    elif (os.name) == 'nt':
+            os.system('cls')
+
+def generate_card_pictures(hand):
+    #Makes playing cards like so:
+    #╔═══╗╔═══╗                  
+    #║ 2 ║║ 5 ║                  
+    #║ ♦ ║║ ♣ ║
+    #╚═══╝╚═══╝
+    
+    line_card_rank = u""
+    line_card_suit = u""
+    number_of_cards = len(hand)
+
+    line_card_top =         u"╔═══╗"*number_of_cards
+    for card in hand:
+        line_card_rank +=   u"║ {0} ║".format(card[0])
+        line_card_suit +=   u"║ {0} ║".format(card[1])
+        
+    line_card_bottom =      u"╚═══╝"*number_of_cards 
+    
+    return [line_card_top,line_card_rank,line_card_suit,line_card_bottom]
 
 def display_current_state(list_of_hands, current_player):
     #clear() #would be nice to clear the console here
@@ -33,6 +56,7 @@ def display_current_state(list_of_hands, current_player):
     line_player_hands = u""
     line_player_labels = u""
     line_current_player_arrows = u""
+    line_current_player_total = u"TOTAL: {0}"
     
     for player in range(no_of_players):
         hand = list_of_hands[player]
@@ -57,11 +81,13 @@ def display_current_state(list_of_hands, current_player):
     line_dealer_label = "D".center(output_width)
     line_dealer_hand = u"|{0}|".format(dealer_string)
     for player in range (current_player):
-        #line_current_player_arrows += "".center(len(player_labels[player]))
         line_current_player_arrows += " "*len(player_labels[player])
-    #line_current_player_arrows += " "*(int(len(player_labels[current_player])/2)-1)
-    line_current_player_arrows += u" \u2191\u2191\n".center(len(player_labels[current_player]))
-    ##line_current_player_arrows += u"\u2191\u2191\n"
+    line_current_player_arrows += u" \u2191\u2191".center(len(player_labels[current_player]))
+    line_current_player_total = line_current_player_total.format(get_total(list_of_hands[current_player])).center(output_width)
+
+    card_pictures = generate_card_pictures(list_of_hands[current_player])
+
+
 
     print
     print "".center(output_width,'#')+"\n"
@@ -72,8 +98,12 @@ def display_current_state(list_of_hands, current_player):
     print line_player_labels
     print line_current_player_arrows
     print "".center(output_width,'#')
-    
-        
+    print
+    for card_line in card_pictures:
+        print card_line.center(output_width)
+    print line_current_player_total
+    print
+    print "".center(output_width,'#')+"\n"
     
 def display_current_state_edit(list_of_hands, ):
     

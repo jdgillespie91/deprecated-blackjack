@@ -56,7 +56,8 @@ from random import shuffle
 def create_playing_deck(number_of_decks):
     playing_deck = []
     rank = ['A', '2', '3', '4', '5', '6', '7', '8', '9', 'T', 'J', 'Q', 'K']
-    suit = [u'\u2660', u'\u2661', u'\u2662', u'\u2663']
+    suit = [u'\u2666', u'\u2665', u'\u2660', u'\u2663']
+    #diamond/heart/spade/club
     unique_id = 0
 
     for i in xrange(number_of_decks):
