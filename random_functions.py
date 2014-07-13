@@ -75,3 +75,5 @@ def display_current_state(list_of_hands, current_player):
     
         
     
+def display_current_state_edit(list_of_hands, ):
+    
