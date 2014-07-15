@@ -1,0 +1,23 @@
+--
+
+TOC
+1. Template
+2. Functions
+
+--
+
+1. Template
+
+Document functions in the following way:
+
+- my_function(argument_1, argument_2, ...)
+- return values (if applicable)
+short description of what my_function does (on a very high level).
+
+For example, 
+
+- convert_temperature_celsius_to_fahrenheit(temperature_in_celsius) 
+- returns a float
+Takes temperature in celsius (float) as an argument and returns the equivalent temperature in fahrenheit.
+
+2. Functions
