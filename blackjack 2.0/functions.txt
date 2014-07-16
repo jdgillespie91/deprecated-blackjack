@@ -56,8 +56,8 @@ get_number_of_automated_runs()
 - The function should accept user input, check that it is a valid input and return if so. It is worth considering displaying an estimated runtime if input gets very large.
 
 *** In Progress *** 
-game(number_of_players, number_of_decks, number_of_automated_runs = 1)
-- Takes integers number_of_players and number_of_decks as given by their respective get functions (see above). Takes number_of_automated runs which defaults to 1 for use in manual mode and takes the value given by its get function (see above) in auto mode.
+game(manual_flag, number_of_players, number_of_decks, number_of_automated_runs = 1)
+- Takes boolean value manual_flag and integers number_of_players and number_of_decks as given by their respective get functions (see above). Takes number_of_automated runs which defaults to 1 for use in manual mode and takes the value given by its get function (see above) in auto mode.
 - Returns a list of integers (all of which are 0, 1 or 2 and correspond to player loses, draws or wins respectively).
 - game(...) should play number_of_automated_runs rounds of blackjack and return a list containing every result. (For now, we shall have a single list with all the results as opposed to a list of lists where each inner list corresponds to a single round. This may prove to be the wrong choice though so it's something to be aware of.)
 
@@ -71,10 +71,40 @@ get_deck(number_of_decks)
 - Returns a list of integers between 1 and 52. The list should have length number_of_decks*52.
 - The list should be the integers 1-52 repeated number_of_decks times and shuffled (using the shuffle function from module random if I recall correctly). The integers 1-52 each correspond to a single card in a deck. See get_card_value(...) for this correspondence.
 
-do_deal(deck)
-- Takes the playing deck (a list of integers as defined according to get_deck(...)) as an argument.
-- Returns a list of lists corresponding to a list of hands (each inner list corresponds to a single hand).
-- This function should deal according to casino rules. The first list should be player 1's hand, the second player 2's hand, and so on. The final list should be the dealer's hand.
+get_number_of_hands(number_of_players)
+- Takes an integer as an argument (an integer that corresponds to the number_of_players).
+- Returns the number_of_hands to be dealt.
+- The number of hands is simply one greater than the number of players (i.e. increment the argument by 1 and return that value).
+
+do_deal(deck, number_of_hands)
+- Takes the playing deck (a list of integers as defined according to get_deck(...)) and the number of hands to be dealt as arguments.
+- Returns a list of lists.
+- The outer list should contain number_of_hands lists. The inner lists should each correspond to a hand and should contain 2 integers (corresponding to cards). The first inner list should be player 1's hand, the second player 2's hand, and so on. The final inner list should be the dealer's hand.
+
+print_list_of_hands(list_of_hands)
+- Takes a list of lists corresponding to the list of hands in play as defined by the return of do_deal(...).
+- No return value.
+- Prints the current state of the game; that is, it should print each player hand and the first of the dealer's two cards. The format of this print is entirely flexible but just bear in mind that it should be user-friendly.
+
+player_turn_manual(hand)
+- Takes a hand.
+- Returns a total.
+- Takes a hand, prints current state of the game and accepts user input as a decision until the user stands or is bust. The total of the hand is returned after the user stands or is bust. This will almost certainly require calls to other functions so don't try and put all of this functionality into one function. For instance, get_card_value will be required in determining the total of the hand.
+
+player_turn_auto(hand)
+- Takes a hand.
+- Returns a total.
+- Takes a hand and automatically determines decisions based on that hand. This function is best left alone for now - it will be written when we apply the learning algorithm.
+
+dealer_turn(hand)
+- Takes a hand.
+- Returns a total.
+- Executes the dealer strategy as per casino rules. We use the "H17" strategy (dealer hits soft 17).
+    
+do_determine_outcomes(list_of_hands_totals)
+- Takes a list of integers.
+- Returns a list of integers.
+- The input will be a list of integers that correspond to hand totals. The final integer is the dealer's total. Starting at the first element in the list, each element is compared to the final element and 0 is appended to a list of results if that element is "worse" (worse in the sense that it is a weaker hand in blackjack terms), 1 if it is the same, and 2 if it is stronger (i.e. loss, draw and win). The final list of results will be one element shorter than the input list. This list of results is returned and describes the outcome of the game.
 
 get_card_value(card)
 - Takes an integer (integer between 1 and 52).
