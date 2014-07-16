@@ -30,6 +30,8 @@ I realise now that there are a lot of small variations in the rules that we don'
 
 Step one: Write the game following the layout described in game_layout.txt using only function calls (the functions will not exist at this point). For each new function, update the documentation (functions.txt) as per the template in that file.
 
+Note that the core functions are described in game_layout.txt as well as functions.txt. game_layout.txt gives context to each function whereas functions.txt gives a minimalist overview.
+
 Step two: Write the functions described in functions.txt.
 
 Step three: Test!

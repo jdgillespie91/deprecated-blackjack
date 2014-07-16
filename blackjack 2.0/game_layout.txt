@@ -9,53 +9,53 @@ TOC
 
 --
 
-1. File Structure
+1. Function Structure
 
-The file structure will be something like:
+The function structure will be something like:
 
-play_blackjack.py
-    game.py
-		player_turn.py
-			auto_decision.py
-			manual_decision.py
-		dealer_turn.py
+play_blackjack
+    game
+        player_turn
+            auto_decision
+            manual_decision
+        dealer_turn
+        
+Here, play_blackjack calls game calls player_turn and so on. Note that auto refers to the version of the game to be played when the learning algorithm is applied and manual refers to the version of the game to be played when humans are playing it on a game-by-game basis. 
 
-Here, play_blackjack calls game.py calls player_turn.py and so on. Note that auto refers to the version of the game to be played when the learning algorithm is applied and manual refers to the version of the game to be played when humans are playing it on a game-by-game basis. 
-
-2. File Descriptions
+2. Function Descriptions
 
 Each file should do the following: 
 
-play_blackjack.py
+play_blackjack
 Plays one game of blackjack and outputs results so that a human or a computer may interpret them (depending on whether we are in auto mode or manual mode).
 
-game.py
+game
 Controls the flow of the blackjack game (essentially what main.py did in the previous version - blackjack 1.0). Roughly speaking, it will
  - take number of players
  - take number of decks.
  - shuffle deck.
  - deal deck.
- - for each player, execute player_turn.py and return total.
- - execute dealer_turn.py and return total.
+ - for each player, execute player_turn and return total.
+ - execute dealer_turn and return total.
  - for each player, decide outcome by comparing player and dealer totals.
  
-player_turn.py
+player_turn
 Controls the flow of the player turn. Moves the state of the game on by one turn. Roughly speaking, it will
- - take current state of game and pass to (auto/manual)_decision.py.
+ - take current state of game and pass to (auto/manual)_decision.
  - pass back the total of the hand.
  
-auto_decision.py
+auto_decision
 Passes game state to computer and determines decision (via magic). It should take the game state and return the decision as an integer.
 
-manual_decision.py
+manual_decision
 Passes game state to output and receives decision via input from the user. It should return the decision as an integer.
 
-dealer_turn.py
+dealer_turn
 Executes dealer strategy as per casino rules.
  
 3. Notes
 
  - in auto mode, we will need to think about how to deal with number of players. We could either
-   - force one player so that the outcome of game.py is either a 0 (player loses) or 1 (player wins).
+   - force one player so that the outcome of game is either a 0 (player loses) or 1 (player wins).
    - allow for several players and return the result of each player vs dealer game as a list (or some other data type). This is similar to running the instance above multiple times (but, crucially, it is not identical).
- - it may prove sensible to merge (auto/manual)_decision.py into player_turn.py. We will see when the time comes.
+ - it may prove sensible to merge (auto/manual)_decision into player_turn. We will see when the time comes.
