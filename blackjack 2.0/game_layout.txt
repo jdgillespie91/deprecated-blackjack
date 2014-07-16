@@ -19,7 +19,7 @@ play_blackjack
             auto_decision
             manual_decision
         dealer_turn
-        
+    
 Here, play_blackjack calls game calls player_turn and so on. Note that auto refers to the version of the game to be played when the learning algorithm is applied and manual refers to the version of the game to be played when humans are playing it on a game-by-game basis. 
 
 2. Function Descriptions
@@ -31,19 +31,19 @@ Plays one game of blackjack and outputs results so that a human or a computer ma
 
 game
 Controls the flow of the blackjack game (essentially what main.py did in the previous version - blackjack 1.0). Roughly speaking, it will
- - take number of players
- - take number of decks.
- - shuffle deck.
- - deal deck.
- - for each player, execute player_turn and return total.
- - execute dealer_turn and return total.
- - for each player, decide outcome by comparing player and dealer totals.
- 
+- take number of players
+- take number of decks.
+- shuffle deck.
+- deal deck.
+- for each player, execute player_turn and return total.
+- execute dealer_turn and return total.
+- for each player, decide outcome by comparing player and dealer totals.
+
 player_turn
 Controls the flow of the player turn. Moves the state of the game on by one turn. Roughly speaking, it will
- - take current state of game and pass to (auto/manual)_decision.
- - pass back the total of the hand.
- 
+- take current state of game and pass to (auto/manual)_decision.
+- pass back the total of the hand.
+
 auto_decision
 Passes game state to computer and determines decision (via magic). It should take the game state and return the decision as an integer.
 
@@ -52,10 +52,10 @@ Passes game state to output and receives decision via input from the user. It sh
 
 dealer_turn
 Executes dealer strategy as per casino rules.
- 
+
 3. Notes
 
- - in auto mode, we will need to think about how to deal with number of players. We could either
-   - force one player so that the outcome of game is either a 0 (player loses) or 1 (player wins).
-   - allow for several players and return the result of each player vs dealer game as a list (or some other data type). This is similar to running the instance above multiple times (but, crucially, it is not identical).
- - it may prove sensible to merge (auto/manual)_decision into player_turn. We will see when the time comes.
+- in auto mode, we will need to think about how to deal with number of players. We could either
+- force one player so that the outcome of game is either a 0 (player loses) or 1 (player wins).
+- allow for several players and return the result of each player vs dealer game as a list (or some other data type). This is similar to running the instance above multiple times (but, crucially, it is not identical).
+- it may prove sensible to merge (auto/manual)_decision into player_turn. We will see when the time comes.

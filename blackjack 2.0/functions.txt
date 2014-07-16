@@ -2,7 +2,8 @@
 
 TOC
 1. Template
-2. Functions
+2. Conventions
+3. Functions
 
 --
 
@@ -10,14 +11,72 @@ TOC
 
 Document functions in the following way:
 
-- my_function(argument_1, argument_2, ...)
-- return values (if applicable)
-short description of what my_function does (on a very high level).
+my_function(argument_1, argument_2, ...)
+- Description of arguments
+- Description of return values.
+- Short description of what the function does (if not obvious from the previous sections).
 
 For example, 
 
-- convert_temperature_celsius_to_fahrenheit(temperature_in_celsius) 
-- returns a float
-Takes temperature in celsius (float) as an argument and returns the equivalent temperature in fahrenheit.
+convert_temperature_celsius_to_fahrenheit(temperature_in_celsius) 
+- temperature_in_celsius is a float.
+- Returns a float corresponding to the temperature in celsius.
+- The function converts its argument to temperature in fahrenheit by scaling appropriately.
 
-2. Functions
+2. Conventions
+
+These conventions are fairly loose so feel free to ignore them. In general though:
+- For functions that get a quantity from somewhere, prefix with get_ (e.g. get_number_of_players gets an integer from user input, get_deck gets a list of integers).
+- For functions that do something to an existing quantity, prefix with do_ (e.g. do_deal deals the cards).
+- For functions that return a boolean value after checking a quantity, prefix with is_.
+- For functions that print output to the terminal, prefix with print_.
+- For functions that log output, prefix with log_.
+
+3. Functions
+
+*** Done ***
+play_blackjack(manual_flag)
+- manual_flag is a boolean value which is True if manual mode is on and False if auto mode is on.
+- Returns a list of integers (all of which are 0, 1 or 2 and correspond to player loses, draws or wins respectively).
+- Takes manual_flag and executes game() accordingly (manual and auto versions of game() both accept number_of_players and number_of_decks but only auto version accepts an integer value of number_of_automated_runs other than 1).
+
+get_number_of_players()
+- Takes no arguments.
+- Returns an integer between 1 and some sensible value (remember it should correspond to number of players!).
+- The function should accept user input, check that it is a valid input and return if so.
+
+get_number_of_decks()
+- Takes no arguments.
+- Returns an integer between 1 and some sensible value (remember it should correspond to number of decks!).
+- The function should accept user input, check that it is a valid input and return if so.
+
+get_number_of_automated_runs()
+- Takes no arguments.
+- Returns an integer between 1 and some sensible value (remember it should correspond to number of runs!).
+- The function should accept user input, check that it is a valid input and return if so. It is worth considering displaying an estimated runtime if input gets very large.
+
+*** In Progress *** 
+game(number_of_players, number_of_decks, number_of_automated_runs = 1)
+- Takes integers number_of_players and number_of_decks as given by their respective get functions (see above). Takes number_of_automated runs which defaults to 1 for use in manual mode and takes the value given by its get function (see above) in auto mode.
+- Returns a list of integers (all of which are 0, 1 or 2 and correspond to player loses, draws or wins respectively).
+- game(...) should play number_of_automated_runs rounds of blackjack and return a list containing every result. (For now, we shall have a single list with all the results as opposed to a list of lists where each inner list corresponds to a single round. This may prove to be the wrong choice though so it's something to be aware of.)
+
+print_outcomes(list_of_outcomes)
+- Takes a list of integers (all of which are 0, 1 or 2 and correspond to player loses, draws or wins respectively).
+- No return value.
+- Prints the outcome of each player vs dealer game (i.e. for each element of the list, it prints a statement indicating whether that element corresponds to a win, draw or loss).
+
+get_deck(number_of_decks)
+- Takes an integer (from get_number_of_decks()).
+- Returns a list of integers between 1 and 52. The list should have length number_of_decks*52.
+- The list should be the integers 1-52 repeated number_of_decks times and shuffled (using the shuffle function from module random if I recall correctly). The integers 1-52 each correspond to a single card in a deck. See get_card_value(...) for this correspondence.
+
+do_deal(deck)
+- Takes the playing deck (a list of integers as defined according to get_deck(...)) as an argument.
+- Returns a list of lists corresponding to a list of hands (each inner list corresponds to a single hand).
+- This function should deal according to casino rules. The first list should be player 1's hand, the second player 2's hand, and so on. The final list should be the dealer's hand.
+
+get_card_value(card)
+- Takes an integer (integer between 1 and 52).
+- Returns the card value (integer between 2 and 11)
+- Let integers 1-13, 14-26, 27-39 and 40-52 correspond to Ace-King of spades, hearts, diamonds and clubs respectively. Let Ace have value 11. We will make use of a number_of_aces variable to account for the fact that aces may be soft.
