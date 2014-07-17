@@ -17,7 +17,7 @@ def get_number_of_decks():
     
 def get_number_of_automated_runs():
     
-def game(manual_flag, number_of_players, number_of_decks, number_of_automated_runs = 1):
+def game(manual_flag, number_of_players, number_of_decks):
     deck = get_deck(number_of_decks)
     hands = do_deal_deck(deck, number_of_players)
     hand_totals = []
