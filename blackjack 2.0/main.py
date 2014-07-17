@@ -17,30 +17,33 @@ def get_number_of_players():
 def get_number_of_decks():
     
 def get_number_of_automated_runs():
-
-# Jake 17/07/14 - game(...) in general is quite messy. The functionality is okay though. Feel free to clean it up - in particular, note where it's difficult to follow my logic. This will highlight what specifically needs cleaning up.
+    
 def game(manual_flag, number_of_players, number_of_decks, number_of_automated_runs = 1):
     deck = get_deck(number_of_decks)
-    number_of_hands = get_number_of_hands(number_of_players)
+    hands = do_deal_deck(deck, number_of_players)
+    player_indices = [0] * number_of_players
+    dealer_index = number_of_players
     
-    list_of_hands = do_deal(deck, number_of_hands)
-    
-    # Jake 16/07/14 - I think the logic here could be made less repetitive but I can't work out how! Any ideas?
-    list_of_hands_totals = [0]*number_of_hands # Initialise a zero array to be updated in the following loop.
+    # The repetition here suggests there is room for improvement in the logic.
     if manual_flag:
-        print_list_of_hands(list_of_hands)
-        for player_index in number_of_players:
-            list_of_hands_totals[player_index] = player_turn_manual(list_of_hands[player_index])
+        print_hands(hands)
+        for player_index in player_indices:
+            player_hand = hands[player_index]
+            player_total = do_player_turn_manual(player_hand)
+            hand_totals[player_index] = player_total # Consider using append function since it might read better.
     else:
-        for player_index in number_of_players:
-            list_of_hands_totals[player_index] = player_turn_auto(list_of_hands[player_index])
-            
-    dealer_index = number_of_hands
-    list_of_hands_totals[dealer_index] = dealer_turn(list_of_hands[dealer_index])
+        for player_index in player_indices:
+            player_hand = hands[player_index]
+            player_total = do_player_turn_auto(player_hand)
+            hand_totals[player_index] = player_total # Consider using append function since it might read better.
     
-    list_of_outcomes = do_determine_outcomes(list_of_hands_totals)
+    dealer_hand = hands[dealer_index]
+    dealer_total = do_dealer_turn(dealer_hand)
+    hand_totals[dealer_index] = dealer_total
     
-    return list_of_outcomes
+    outcomes = do_determine_outcomes(hand_totals)
+    
+    return outcomes
     
 def print_outcomes(list_of_outcomes):
     
