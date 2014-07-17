@@ -20,7 +20,7 @@ For example,
 
 convert_temperature_celsius_to_fahrenheit(temperature_in_celsius) 
 - temperature_in_celsius is a float.
-- Returns a float corresponding to the temperature in celsius.
+- Returns a float corresponding to the temperature in fahrenheit.
 - The function converts its argument to temperature in fahrenheit by scaling appropriately.
 
 2. Conventions
