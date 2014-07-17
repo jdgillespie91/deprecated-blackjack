@@ -1,16 +1,15 @@
 ### Functions ###
 
-def play_blackjack(manual_flag):
+def play_blackjack(manual_flag, number_of_games = 1):
     number_of_players = get_number_of_players()
     number_of_decks = get_number_of_decks()
-    if manual_flag:
-        list_of_outcomes = game(manual_flag, number_of_players, number_of_decks) # In manual mode, execute game(...) once only.
-        print_outcomes(list_of_outcomes)
-    else:
-        number_of_automated_runs = get_number_of_automated_runs()
-        list_of_outcomes = game(manual_flag, number_of_players, number_of_decks, number_of_automated_runs)
     
-    return list_of_outcomes
+    for game in range(number_of_games):
+        game_results = game(manual_flag, number_of_players, number_of_decks)
+        if manual_flag:
+            print_results(list_of_results)
+        else:
+            list_of_results.append(game_results)
     
 def get_number_of_players():
     
@@ -37,11 +36,11 @@ def game(manual_flag, number_of_players, number_of_decks, number_of_automated_ru
     dealer_total = do_dealer_turn(dealer_hand)
     hand_totals[dealer_index] = dealer_total
     
-    outcomes = do_determine_outcomes(hand_totals)
+    results = do_determine_results(hand_totals)
     
-    return outcomes
+    return results
     
-def print_outcomes(list_of_outcomes):
+def print_results(list_of_results):
     
 def get_deck(number_of_decks):
     
@@ -57,7 +56,7 @@ def player_turn_auto(hand):
 
 def dealer_turn(hand):
     
-def do_determine_outcomes(list_of_hands_totals):
+def do_determine_results(list_of_hands_totals):
     
 def get_card_value(card):
 
