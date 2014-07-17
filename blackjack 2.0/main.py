@@ -22,10 +22,6 @@ def game(manual_flag, number_of_players, number_of_decks, number_of_automated_ru
     deck = get_deck(number_of_decks)
     hands = do_deal_deck(deck, number_of_players)
     hand_totals = []
-    dealer_index = number_of_players
-    
-    if manual_flag:         # Should be done within do_player_turn_manual, no?
-        print_hands(hands)  # ^^
         
     for player_index in range(number_of_players)
         player_hand = hands[player_index]
@@ -34,8 +30,9 @@ def game(manual_flag, number_of_players, number_of_decks, number_of_automated_ru
         else:
             player_total = do_player_turn_auto(player_hand)   
         
-        hand_totals.append(player_total) = player_total # Is append slower than preallocating?
+        hand_totals.append(player_total) = player_total
     
+    dealer_index = number_of_players
     dealer_hand = hands[dealer_index]
     dealer_total = do_dealer_turn(dealer_hand)
     hand_totals[dealer_index] = dealer_total
