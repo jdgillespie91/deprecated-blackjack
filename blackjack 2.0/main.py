@@ -21,21 +21,20 @@ def get_number_of_automated_runs():
 def game(manual_flag, number_of_players, number_of_decks, number_of_automated_runs = 1):
     deck = get_deck(number_of_decks)
     hands = do_deal_deck(deck, number_of_players)
-    player_indices = [0] * number_of_players
+    hand_totals = []
     dealer_index = number_of_players
     
-    # The repetition here suggests there is room for improvement in the logic.
-    if manual_flag:
-        print_hands(hands)
-        for player_index in player_indices:
-            player_hand = hands[player_index]
-            player_total = do_player_turn_manual(player_hand)
-            hand_totals[player_index] = player_total # Consider using append function since it might read better.
-    else:
-        for player_index in player_indices:
-            player_hand = hands[player_index]
-            player_total = do_player_turn_auto(player_hand)
-            hand_totals[player_index] = player_total # Consider using append function since it might read better.
+    if manual_flag:         # Should be done within do_player_turn_manual, no?
+        print_hands(hands)  # ^^
+        
+    for player_index in range(number_of_players)
+        player_hand = hands[player_index]
+        if manual_flag:
+            player_total = do_player_turn_manual(player_hand)     
+        else:
+            player_total = do_player_turn_auto(player_hand)   
+        
+        hand_totals.append(player_total) = player_total # Is append slower than preallocating?
     
     dealer_hand = hands[dealer_index]
     dealer_total = do_dealer_turn(dealer_hand)
