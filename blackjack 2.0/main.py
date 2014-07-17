@@ -34,7 +34,7 @@ def game(manual_flag, number_of_players, number_of_decks, number_of_automated_ru
         else:
             player_total = do_player_turn_auto(player_hand)   
         
-        hand_totals.append(player_total) = player_total # Is append slower than preallocating?
+        hand_totals.append(player_total) # Is append slower than preallocating?
     
     dealer_hand = hands[dealer_index]
     dealer_total = do_dealer_turn(dealer_hand)
