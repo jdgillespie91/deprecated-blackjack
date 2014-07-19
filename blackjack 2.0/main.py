@@ -1,5 +1,23 @@
 ## Functions ###
 
+class Card:
+    def __init__(self,value,suit,rank):
+        self.value = value
+        self.suit = suit
+        self.rank = rank
+
+    def isSoftAce(self):
+        if self.value == 11:
+            return True
+        else:
+            return False
+
+    def makeHardAce(self):
+        if not self.isSoftAce():
+            print '****ERROR**** Tried to make a hard ace out of a ' + str(self.value)
+        else:
+            self.value = 1
+
 def play_blackjack(manual_flag, number_of_games = 1):
     number_of_players = get_number_of_players()
     number_of_decks = get_number_of_decks()
