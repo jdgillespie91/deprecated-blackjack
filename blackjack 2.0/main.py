@@ -111,29 +111,34 @@ def player_turn_auto(hand):
 
 def dealer_turn(hand):
     BUST = 0
-    ACES = [1,14,27,40]
     if is_blackjack(hand):
         return 1
 
     while True:
         hand_total = get_hand_total(hand)
         if hand_total > 21:
-            for card_index in xrange(len(hand)):
-                if hand[card_index] in ACES:
-                    hand[card_index] = 0 # Convert soft ace to hard.
+            is_bust = True
+            for card in hand:
+                if card.isSoftAce():
+                    card.makeHardAce()
+                    is_bust = False
                     break
+            if is_bust:
                 return BUST
         else:
             if hand_total > 17:
                 return hand_total
             elif hand_total == 17:
-                for card_index in xrange(len(hand)):
-                    if hand[card_index] in ACES:
-                        hand[card_index] = 0 # Convert soft ace to hard.
+                is_hard = True
+                for card in hand
+                    if card.isSoftAce():
+                        card.makeHardAce
+                        is_hard = False
                         do_hit(hand, deck)
                         break
+                if is_hard:
                     return hand_total
-            else:
+            elif hand_total < 17:
                 do_hit(hand, deck)
 
 
