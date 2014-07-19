@@ -11,6 +11,7 @@ TOC
 
 Document functions in the following way:
 
+*** Status flag indicating whether function is ready to write ***
 my_function(argument_1, argument_2, ...)
 - Description of arguments
 - Description of return values.
@@ -18,6 +19,7 @@ my_function(argument_1, argument_2, ...)
 
 For example, 
 
+*** Ready to write ***
 convert_temperature_celsius_to_fahrenheit(temperature_in_celsius) 
 - temperature_in_celsius is a float.
 - Returns a float corresponding to the temperature in fahrenheit.
@@ -40,68 +42,98 @@ play_blackjack(manual_flag, number_of_games)
 - Returns a list of integers (all of which are 0, 1 or 2 and correspond to player loses, draws or wins respectively).
 - Takes manual_flag and executes game() accordingly (game() only displays visuals for humans)
 
+*** Ready to write ***
 get_number_of_players()
 - Takes no arguments.
 - Returns an integer between 1 and some sensible value (remember it should correspond to number of players!).
 - The function should accept user input, check that it is a valid input and return if so.
 
+*** Ready to write ***
 get_number_of_decks()
 - Takes no arguments.
 - Returns an integer between 1 and some sensible value (remember it should correspond to number of decks!).
 - The function should accept user input, check that it is a valid input and return if so.
 
+*** Ready to write ***
 get_number_of_automated_runs()
 - Takes no arguments.
 - Returns an integer between 1 and some sensible value (remember it should correspond to number of runs!).
 - The function should accept user input, check that it is a valid input and return if so. It is worth considering displaying an estimated runtime if input gets very large.
 
-*** In Progress *** 
+*** Done *** 
 game(manual_flag, number_of_players, number_of_decks, number_of_automated_runs = 1)
 - Takes boolean value manual_flag and integers number_of_players and number_of_decks as given by their respective get functions (see above). Takes number_of_automated runs which defaults to 1 for use in manual mode and takes the value given by its get function (see above) in auto mode.
 - Returns a list of integers (all of which are 0, 1 or 2 and correspond to player loses, draws or wins respectively).
 - game(...) should play number_of_automated_runs rounds of blackjack and return a list containing every result. (For now, we shall have a single list with all the results as opposed to a list of lists where each inner list corresponds to a single round. This may prove to be the wrong choice though so it's something to be aware of.)
 
+*** Ready to write ***
 print_results(results)
 - Takes a list of integers (all of which are 0, 1 or 2 and correspond to player loses, draws or wins respectively).
 - No return value.
 - Prints the outcome of each player vs dealer game (i.e. for each element of the list, it prints a statement indicating whether that element corresponds to a win, draw or loss).
 
+*** Ready to write ***
 get_deck(number_of_decks)
 - Takes an integer (from get_number_of_decks()).
 - Returns a list of integers between 1 and 52. The list should have length number_of_decks*52.
 - The list should be the integers 1-52 repeated number_of_decks times and shuffled (using the shuffle function from module random if I recall correctly). The integers 1-52 each correspond to a single card in a deck. See get_card_value(...) for this correspondence.
 
+*** Ready to write ***
 do_deal_deck(deck, number_of_players)
 - Takes the playing deck (a list of integers as defined according to get_deck(...)) and the number of players to be dealt as arguments.
 - Returns a list of lists.
 - The outer list should contain number_of_players + 1 lists (don't forget the dealer!). The inner lists should each correspond to a hand and should contain 2 integers (corresponding to cards). The first inner list should be player 1's hand, the second player 2's hand, and so on. The final inner list should be the dealer's hand.
 
+*** Ready to write ***
 print_hands(hands)
 - Takes a list of lists corresponding to the list of hands in play as defined by the return of do_deal_deck(...).
 - No return value.
 - Prints the current state of the game; that is, it should print each player hand and the first of the dealer's two cards. The format of this print is entirely flexible but just bear in mind that it should be user-friendly.
 
+*** Not ready to write ***
 do_player_turn_manual(hand)
 - Takes a hand.
 - Returns a total.
 - Takes a hand, prints current state of the game and accepts user input as a decision until the user stands or is bust. The total of the hand is returned after the user stands or is bust. This will almost certainly require calls to other functions so don't try and put all of this functionality into one function. For instance, get_card_value will be required in determining the total of the hand.
 
+*** Not ready to write ***
 do_player_turn_auto(hand)
 - Takes a hand.
 - Returns a total.
 - Takes a hand and automatically determines decisions based on that hand. This function is best left alone for now - it will be written when we apply the learning algorithm.
 
+*** Not ready to write ***
 do_dealer_turn(hand)
 - Takes a hand.
-- Returns a total.
+- Returns a total if its between 17 and 21 (and not soft 17), a 0 if bust and a 1 if blackjack.
 - Executes the dealer strategy as per casino rules. We use the "H17" strategy (dealer hits soft 17).
-    
+
+*** Ready to write ***
+is_blackjack(hand)
+- Takes a hand (list of integers between 0 and 52).
+- Returns a boolean.
+- Takes a hand and checks if the hand is blackjack. Returns True if blackjack and False if not.
+
+*** Ready to write ***
+do_hit(hand, deck)
+- Takes a hand (list of integers between 0 and 52) and the playing deck.
+- Returns a hand (list of integers between 0 and 52).
+- Takes the first card in the playing deck and appends it to hand. Returns hand. Note that we use append since we don't know the final length of hand and so cannot preassign its length. It might be worth considering preassigning its length to something large (presumably 21 should be its maximum length - 21 aces) but that may be costly in terms of storage and not save much time. This is a very minor issue though.
+
+*** Ready to write ***    
 do_determine_results(hand_totals)
 - Takes a list of integers.
 - Returns a list of integers.
 - The input will be a list of integers that correspond to hand totals. The final integer is the dealer's total. Starting at the first element in the list, each element is compared to the final element and 0 is appended to a list of results if that element is "worse" (worse in the sense that it is a weaker hand in blackjack terms), 1 if it is the same, and 2 if it is stronger (i.e. loss, draw and win). The final list of results will be one element shorter than the input list. This list of results is returned and describes the outcome of the game.
 
+*** Ready to write ***
+get_hand_value(hand)
+- Takes a list of integers between 0 and 52.
+- Returns an integer.
+- Calls get_card_value on both integers and returns the sum of the returns.
+
+*** Ready to write ***
 get_card_value(card)
-- Takes an integer (integer between 1 and 52).
-- Returns the card value (integer between 2 and 11)
-- Let integers 1-13, 14-26, 27-39 and 40-52 correspond to Ace-King of spades, hearts, diamonds and clubs respectively. Let Ace have value 11. We will make use of a number_of_aces variable to account for the fact that aces may be soft.
+- Takes an integer (integer between 0 and 52).
+- Returns the card value (integer between 1 and 11)
+- Let integers 1-13, 14-26, 27-39 and 40-52 correspond to Ace-King of spades, hearts, diamonds and clubs respectively. Let Aces be soft in general (i.e. integers 1, 14, 27 and 40 return 11) and let integer 0 correspond to a hard Ace (so return 1).
