@@ -52,36 +52,40 @@ def do_deal(deck):
 def print_list_of_hands(list_of_hands):
 
 def player_turn_manual(hand):
+    STAND = 0
+    HIT = 1
+    
 	is_turn_finished = False
 	while not is_turn_finished:
 		print_list_of_hands(hands)
 		print_hand(hand)
-		available_decisions = get_available_decisions(hand)
-		decision = get_decision(available_decisions)
+		decision = get_decision(hand)
 		
 		if decision == STAND:
 			do_player_stand()
 			is_turn_finished = True
 			
 		elif decision == HIT:
-			do_player_hit()
+			do_hit()
 			if get_hand_total(hand) == BUST:
 				is_turn_finished = True
 				
 	return get_hand_total(hand)
 
 def player_turn_auto(hand):
+    STAND = 0
+    HIT = 1
+    
 	is_turn_finished = False
 	while not is_turn_finished:
-		available_decisions = get_available_decisions(hand)
-		decision = get_decision(available_decisions)
+		decision = get_decision(hand)
 		
 		if decision == STAND:
 			do_player_stand()
 			is_turn_finished = True
 			
 		elif decision == HIT:
-			do_player_hit()
+			do_hit()
 			if get_hand_total(hand) == BUST:
 				is_turn_finished = True
 				
@@ -118,8 +122,15 @@ def dealer_turn(hand):
 def is_blackjack(hand):
 
 def do_hit(hand):
+    
+def get_available_decisions(hand):
+    
+def get_decision:
+    available_decisions = get_available_decisions
 
 def do_determine_results(list_of_hands_totals):
+
+def get_hand_total(hand):
 
 def get_card_value(card):
 

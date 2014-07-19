@@ -90,13 +90,13 @@ print_hands(hands)
 - No return value.
 - Prints the current state of the game; that is, it should print each player hand and the first of the dealer's two cards. The format of this print is entirely flexible but just bear in mind that it should be user-friendly.
 
-*** Not ready to write ***
+*** Done ***
 do_player_turn_manual(hand)
 - Takes a hand.
 - Returns a total.
 - Takes a hand, prints current state of the game and accepts user input as a decision until the user stands or is bust. The total of the hand is returned after the user stands or is bust. This will almost certainly require calls to other functions so don't try and put all of this functionality into one function. For instance, get_card_value will be required in determining the total of the hand.
 
-*** Not ready to write ***
+*** Done ***
 do_player_turn_auto(hand)
 - Takes a hand.
 - Returns a total.
@@ -119,6 +119,18 @@ do_hit(hand, deck)
 - Takes a hand (list of integers between 0 and 52) and the playing deck.
 - Returns a hand (list of integers between 0 and 52).
 - Takes the first card in the playing deck and appends it to hand. Returns hand. Note that we use append since we don't know the final length of hand and so cannot preassign its length. It might be worth considering preassigning its length to something large (presumably 21 should be its maximum length - 21 aces) but that may be costly in terms of storage and not save much time. This is a very minor issue though.
+
+*** Ready to write ***
+get_decision(hand)
+- Takes a hand (list of integers between 0 and 52).
+- Returns an integer.
+- Takes a hand, determines the available decisions by calling get_available_decisions(hand), determines the decision to proceed with (in auto mode, this process still needs defining, but in manual mode, we'll just accept input from the terminal) and returns the integer corresponding to that decision. Currently, 0 corresponds to standing and 1 corresponds to hitting.
+
+*** Ready to write ***
+get_available_decisions(hand)
+- Take hand.
+- Return list of lists where inner list contains an integer and its corresponding decision.
+- Needs to look at the hand and determine what moves are legitimate and return this information. Currently, 0 corresponds to standing and 1 corresponds to hitting.
 
 *** Ready to write ***    
 do_determine_results(hand_totals)
