@@ -102,7 +102,7 @@ do_player_turn_auto(hand)
 - Returns a total.
 - Takes a hand and automatically determines decisions based on that hand. This function is best left alone for now - it will be written when we apply the learning algorithm.
 
-*** Not ready to write ***
+*** Ready to write ***
 do_dealer_turn(hand)
 - Takes a hand.
 - Returns a total if its between 17 and 21 (and not soft 17), a 0 if bust and a 1 if blackjack.
@@ -127,7 +127,7 @@ do_determine_results(hand_totals)
 - The input will be a list of integers that correspond to hand totals. The final integer is the dealer's total. Starting at the first element in the list, each element is compared to the final element and 0 is appended to a list of results if that element is "worse" (worse in the sense that it is a weaker hand in blackjack terms), 1 if it is the same, and 2 if it is stronger (i.e. loss, draw and win). The final list of results will be one element shorter than the input list. This list of results is returned and describes the outcome of the game.
 
 *** Ready to write ***
-get_hand_value(hand)
+get_hand_total(hand)
 - Takes a list of integers between 0 and 52.
 - Returns an integer.
 - Calls get_card_value on both integers and returns the sum of the returns.

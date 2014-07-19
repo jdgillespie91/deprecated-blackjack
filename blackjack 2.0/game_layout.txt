@@ -1,5 +1,3 @@
-Described below is the proposed layout of the game, described at a relatively high level to allow for the inevitable changes that we realise will be required as development proceeds.
-
 --
 
 TOC

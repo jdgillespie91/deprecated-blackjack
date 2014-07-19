@@ -56,32 +56,35 @@ def player_turn_manual(hand):
 def player_turn_auto(hand):
 
 def dealer_turn(hand):
+    BUST = 0
+    ACES = [1,14,27,40]
     if is_blackjack(hand):
         return 1
-    
+
     while True:
-        total = get_hand_value(hand) # Alternatively, we could call this outside of the while loop and increment the total each time we hit. It doesn't read as well but saves computation time.
-        if total > 21:
-            # Make this readable.
-            if 1 or 14 or 27 or 40 in hand:
-                # set soft ace to 0.
-            else:
-                return 0
+        hand_total = get_hand_total(hand)
+        if hand_total > 21:
+            for card_index in xrange(len(hand)):
+                if hand[card_index] in ACES:
+                    hand[card_index] = 0 # Convert soft ace to hard.
+                    break
+                return BUST
         else:
-            if total > 17:
-                return total
-            elif total == 17:
-                # Make this readable.
-                if 1 or 14 or 27 or 40 in hand:
-                    # set soft ace to 0.
-                    do_hit(hand, deck)
-                else:
-                    return total
+            if hand_total > 17:
+                return hand_total
+            elif hand_total == 17:
+                for card_index in xrange(len(hand)):
+                    if hand[card_index] in ACES:
+                        hand[card_index] = 0 # Convert soft ace to hard.
+                        do_hit(hand, deck)
+                        break
+                    return hand_total
             else:
                 do_hit(hand, deck)
-    
+
+
 def is_blackjack(hand):
-    
+
 def do_hit(hand):
 
 def do_determine_results(list_of_hands_totals):
