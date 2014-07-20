@@ -28,7 +28,7 @@ def play_blackjack(manual_flag, number_of_games = 1):
         if manual_flag:
             print_results(game_results)
         else:
-            list_of_game_results[number_of_players*game, number_of_players*(game+1) - 1] = game_results # Assign game_results to earliest unassigned position in list_of_game_results.
+            list_of_game_results[number_of_players*game, number_of_players*(game+1) - 1] = game_results # Assign game_results to earliest unassigned position in list_of_game_results.
 
 def get_number_of_players():
 
@@ -72,42 +72,42 @@ def print_list_of_hands(list_of_hands):
 def player_turn_manual(hand):
     STAND = 0
     HIT = 1
-    
-	is_turn_finished = False
-	while not is_turn_finished:
-		print_list_of_hands(hands)
-		print_hand(hand)
-		decision = get_decision(hand)
-		
-		if decision == STAND:
-			do_player_stand()
-			is_turn_finished = True
-			
-		elif decision == HIT:
-			do_hit()
-			if get_hand_total(hand) == BUST:
-				is_turn_finished = True
-				
-	return get_hand_total(hand)
+
+    is_turn_finished = False
+    while not is_turn_finished:
+        print_list_of_hands(hands)
+        print_hand(hand)
+        decision = get_decision(hand)
+
+        if decision == STAND:
+            do_player_stand()
+            is_turn_finished = True
+
+        elif decision == HIT:
+            do_hit()
+            if get_hand_total(hand) == BUST:
+                is_turn_finished = True
+
+    return get_hand_total(hand)
 
 def player_turn_auto(hand):
     STAND = 0
     HIT = 1
-    
-	is_turn_finished = False
-	while not is_turn_finished:
-		decision = get_decision(hand)
-		
-		if decision == STAND:
-			do_player_stand()
-			is_turn_finished = True
-			
-		elif decision == HIT:
-			do_hit()
-			if get_hand_total(hand) == BUST:
-				is_turn_finished = True
-				
-	return get_hand_total(hand)
+
+    is_turn_finished = False
+    while not is_turn_finished:
+        decision = get_decision(hand)
+
+        if decision == STAND:
+            do_player_stand()
+            is_turn_finished = True
+
+        elif decision == HIT:
+            do_hit()
+            if get_hand_total(hand) == BUST:
+                is_turn_finished = True
+
+    return get_hand_total(hand)
 
 def dealer_turn(hand):
     BUST = 0
@@ -129,33 +129,45 @@ def dealer_turn(hand):
             if hand_total > 17:
                 return hand_total
             elif hand_total == 17:
-                is_hard = True
+                is_hand_hard = True
                 for card in hand
                     if card.isSoftAce():
                         card.makeHardAce
-                        is_hard = False
+                        is_hand_hard = False
                         do_hit(hand, deck)
                         break
-                if is_hard:
+                if is_hand_hard:
                     return hand_total
             elif hand_total < 17:
                 do_hit(hand, deck)
 
-
 def is_blackjack(hand):
+    card_one = hand[0]
+    card_two = hand[1]
+    
+    if card_one.value == 11:
+        if card_two.value == 10:
+            return True
+        else:
+            return False
+    elif card_one.value == 10:
+        if card_two.value == 11:
+            return True
+        else:
+            return False
+    else:
+        return False
 
-def do_hit(hand):
-    
+def do_hit(hand, deck):
+
 def get_available_decisions(hand):
-    
+
 def get_decision:
     available_decisions = get_available_decisions
 
 def do_determine_results(list_of_hands_totals):
 
 def get_hand_total(hand):
-
-def get_card_value(card):
 
 
 

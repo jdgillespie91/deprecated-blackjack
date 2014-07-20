@@ -1,0 +1,768 @@
+def test_0001_KA(self):
+    hand = [Card(10, 'Spades', 'K'),Card(11, 'Spades', 'A')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0002_KA(self):
+    hand = [Card(10, 'Spades', 'K'),Card(11, 'Hearts', 'A')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0003_KA(self):
+    hand = [Card(10, 'Spades', 'K'),Card(11, 'Diamonds', 'A')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0004_KA(self):
+    hand = [Card(10, 'Spades', 'K'),Card(11, 'Clubs', 'A')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0005_KA(self):
+    hand = [Card(10, 'Hearts', 'K'),Card(11, 'Spades', 'A')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0006_KA(self):
+    hand = [Card(10, 'Hearts', 'K'),Card(11, 'Hearts', 'A')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0007_KA(self):
+    hand = [Card(10, 'Hearts', 'K'),Card(11, 'Diamonds', 'A')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0008_KA(self):
+    hand = [Card(10, 'Hearts', 'K'),Card(11, 'Clubs', 'A')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0009_KA(self):
+    hand = [Card(10, 'Diamonds', 'K'),Card(11, 'Spades', 'A')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0010_KA(self):
+    hand = [Card(10, 'Diamonds', 'K'),Card(11, 'Hearts', 'A')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0011_KA(self):
+    hand = [Card(10, 'Diamonds', 'K'),Card(11, 'Diamonds', 'A')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0012_KA(self):
+    hand = [Card(10, 'Diamonds', 'K'),Card(11, 'Clubs', 'A')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0013_KA(self):
+    hand = [Card(10, 'Clubs', 'K'),Card(11, 'Spades', 'A')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0014_KA(self):
+    hand = [Card(10, 'Clubs', 'K'),Card(11, 'Hearts', 'A')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0015_KA(self):
+    hand = [Card(10, 'Clubs', 'K'),Card(11, 'Diamonds', 'A')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0016_KA(self):
+    hand = [Card(10, 'Clubs', 'K'),Card(11, 'Clubs', 'A')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0017_QA(self):
+    hand = [Card(10, 'Spades', 'Q'),Card(11, 'Spades', 'A')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0018_QA(self):
+    hand = [Card(10, 'Spades', 'Q'),Card(11, 'Hearts', 'A')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0019_QA(self):
+    hand = [Card(10, 'Spades', 'Q'),Card(11, 'Diamonds', 'A')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0020_QA(self):
+    hand = [Card(10, 'Spades', 'Q'),Card(11, 'Clubs', 'A')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0021_QA(self):
+    hand = [Card(10, 'Hearts', 'Q'),Card(11, 'Spades', 'A')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0022_QA(self):
+    hand = [Card(10, 'Hearts', 'Q'),Card(11, 'Hearts', 'A')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0023_QA(self):
+    hand = [Card(10, 'Hearts', 'Q'),Card(11, 'Diamonds', 'A')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0024_QA(self):
+    hand = [Card(10, 'Hearts', 'Q'),Card(11, 'Clubs', 'A')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0025_QA(self):
+    hand = [Card(10, 'Diamonds', 'Q'),Card(11, 'Spades', 'A')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0026_QA(self):
+    hand = [Card(10, 'Diamonds', 'Q'),Card(11, 'Hearts', 'A')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0027_QA(self):
+    hand = [Card(10, 'Diamonds', 'Q'),Card(11, 'Diamonds', 'A')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0028_QA(self):
+    hand = [Card(10, 'Diamonds', 'Q'),Card(11, 'Clubs', 'A')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0029_QA(self):
+    hand = [Card(10, 'Clubs', 'Q'),Card(11, 'Spades', 'A')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0030_QA(self):
+    hand = [Card(10, 'Clubs', 'Q'),Card(11, 'Hearts', 'A')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0031_QA(self):
+    hand = [Card(10, 'Clubs', 'Q'),Card(11, 'Diamonds', 'A')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0032_QA(self):
+    hand = [Card(10, 'Clubs', 'Q'),Card(11, 'Clubs', 'A')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0033_JA(self):
+    hand = [Card(10, 'Spades', 'J'),Card(11, 'Spades', 'A')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0034_JA(self):
+    hand = [Card(10, 'Spades', 'J'),Card(11, 'Hearts', 'A')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0035_JA(self):
+    hand = [Card(10, 'Spades', 'J'),Card(11, 'Diamonds', 'A')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0036_JA(self):
+    hand = [Card(10, 'Spades', 'J'),Card(11, 'Clubs', 'A')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0037_JA(self):
+    hand = [Card(10, 'Hearts', 'J'),Card(11, 'Spades', 'A')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0038_JA(self):
+    hand = [Card(10, 'Hearts', 'J'),Card(11, 'Hearts', 'A')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0039_JA(self):
+    hand = [Card(10, 'Hearts', 'J'),Card(11, 'Diamonds', 'A')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0040_JA(self):
+    hand = [Card(10, 'Hearts', 'J'),Card(11, 'Clubs', 'A')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0041_JA(self):
+    hand = [Card(10, 'Diamonds', 'J'),Card(11, 'Spades', 'A')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0042_JA(self):
+    hand = [Card(10, 'Diamonds', 'J'),Card(11, 'Hearts', 'A')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0043_JA(self):
+    hand = [Card(10, 'Diamonds', 'J'),Card(11, 'Diamonds', 'A')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0044_JA(self):
+    hand = [Card(10, 'Diamonds', 'J'),Card(11, 'Clubs', 'A')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0045_JA(self):
+    hand = [Card(10, 'Clubs', 'J'),Card(11, 'Spades', 'A')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0046_JA(self):
+    hand = [Card(10, 'Clubs', 'J'),Card(11, 'Hearts', 'A')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0047_JA(self):
+    hand = [Card(10, 'Clubs', 'J'),Card(11, 'Diamonds', 'A')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0048_JA(self):
+    hand = [Card(10, 'Clubs', 'J'),Card(11, 'Clubs', 'A')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0049_10A(self):
+    hand = [Card(10, 'Spades', '10'),Card(11, 'Spades', 'A')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0050_10A(self):
+    hand = [Card(10, 'Spades', '10'),Card(11, 'Hearts', 'A')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0051_10A(self):
+    hand = [Card(10, 'Spades', '10'),Card(11, 'Diamonds', 'A')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0052_10A(self):
+    hand = [Card(10, 'Spades', '10'),Card(11, 'Clubs', 'A')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0053_10A(self):
+    hand = [Card(10, 'Hearts', '10'),Card(11, 'Spades', 'A')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0054_10A(self):
+    hand = [Card(10, 'Hearts', '10'),Card(11, 'Hearts', 'A')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0055_10A(self):
+    hand = [Card(10, 'Hearts', '10'),Card(11, 'Diamonds', 'A')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0056_10A(self):
+    hand = [Card(10, 'Hearts', '10'),Card(11, 'Clubs', 'A')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0057_10A(self):
+    hand = [Card(10, 'Diamonds', '10'),Card(11, 'Spades', 'A')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0058_10A(self):
+    hand = [Card(10, 'Diamonds', '10'),Card(11, 'Hearts', 'A')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0059_10A(self):
+    hand = [Card(10, 'Diamonds', '10'),Card(11, 'Diamonds', 'A')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0060_10A(self):
+    hand = [Card(10, 'Diamonds', '10'),Card(11, 'Clubs', 'A')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0061_10A(self):
+    hand = [Card(10, 'Clubs', '10'),Card(11, 'Spades', 'A')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0062_10A(self):
+    hand = [Card(10, 'Clubs', '10'),Card(11, 'Hearts', 'A')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0063_10A(self):
+    hand = [Card(10, 'Clubs', '10'),Card(11, 'Diamonds', 'A')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0064_10A(self):
+    hand = [Card(10, 'Clubs', '10'),Card(11, 'Clubs', 'A')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0065_AK(self):
+    hand = [Card(11, 'Spades', 'A'),Card(10, 'Spades', 'K')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0066_AK(self):
+    hand = [Card(11, 'Spades', 'A'),Card(10, 'Hearts', 'K')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0067_AK(self):
+    hand = [Card(11, 'Spades', 'A'),Card(10, 'Diamonds', 'K')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0068_AK(self):
+    hand = [Card(11, 'Spades', 'A'),Card(10, 'Clubs', 'K')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0069_AK(self):
+    hand = [Card(11, 'Hearts', 'A'),Card(10, 'Spades', 'K')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0070_AK(self):
+    hand = [Card(11, 'Hearts', 'A'),Card(10, 'Hearts', 'K')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0071_AK(self):
+    hand = [Card(11, 'Hearts', 'A'),Card(10, 'Diamonds', 'K')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0072_AK(self):
+    hand = [Card(11, 'Hearts', 'A'),Card(10, 'Clubs', 'K')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0073_AK(self):
+    hand = [Card(11, 'Diamonds', 'A'),Card(10, 'Spades', 'K')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0074_AK(self):
+    hand = [Card(11, 'Diamonds', 'A'),Card(10, 'Hearts', 'K')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0075_AK(self):
+    hand = [Card(11, 'Diamonds', 'A'),Card(10, 'Diamonds', 'K')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0076_AK(self):
+    hand = [Card(11, 'Diamonds', 'A'),Card(10, 'Clubs', 'K')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0077_AK(self):
+    hand = [Card(11, 'Clubs', 'A'),Card(10, 'Spades', 'K')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0078_AK(self):
+    hand = [Card(11, 'Clubs', 'A'),Card(10, 'Hearts', 'K')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0079_AK(self):
+    hand = [Card(11, 'Clubs', 'A'),Card(10, 'Diamonds', 'K')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0080_AK(self):
+    hand = [Card(11, 'Clubs', 'A'),Card(10, 'Clubs', 'K')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0081_AQ(self):
+    hand = [Card(11, 'Spades', 'A'),Card(10, 'Spades', 'Q')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0082_AQ(self):
+    hand = [Card(11, 'Spades', 'A'),Card(10, 'Hearts', 'Q')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0083_AQ(self):
+    hand = [Card(11, 'Spades', 'A'),Card(10, 'Diamonds', 'Q')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0084_AQ(self):
+    hand = [Card(11, 'Spades', 'A'),Card(10, 'Clubs', 'Q')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0085_AQ(self):
+    hand = [Card(11, 'Hearts', 'A'),Card(10, 'Spades', 'Q')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0086_AQ(self):
+    hand = [Card(11, 'Hearts', 'A'),Card(10, 'Hearts', 'Q')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0087_AQ(self):
+    hand = [Card(11, 'Hearts', 'A'),Card(10, 'Diamonds', 'Q')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0088_AQ(self):
+    hand = [Card(11, 'Hearts', 'A'),Card(10, 'Clubs', 'Q')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0089_AQ(self):
+    hand = [Card(11, 'Diamonds', 'A'),Card(10, 'Spades', 'Q')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0090_AQ(self):
+    hand = [Card(11, 'Diamonds', 'A'),Card(10, 'Hearts', 'Q')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0091_AQ(self):
+    hand = [Card(11, 'Diamonds', 'A'),Card(10, 'Diamonds', 'Q')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0092_AQ(self):
+    hand = [Card(11, 'Diamonds', 'A'),Card(10, 'Clubs', 'Q')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0093_AQ(self):
+    hand = [Card(11, 'Clubs', 'A'),Card(10, 'Spades', 'Q')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0094_AQ(self):
+    hand = [Card(11, 'Clubs', 'A'),Card(10, 'Hearts', 'Q')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0095_AQ(self):
+    hand = [Card(11, 'Clubs', 'A'),Card(10, 'Diamonds', 'Q')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0096_AQ(self):
+    hand = [Card(11, 'Clubs', 'A'),Card(10, 'Clubs', 'Q')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0097_AJ(self):
+    hand = [Card(11, 'Spades', 'A'),Card(10, 'Spades', 'J')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0098_AJ(self):
+    hand = [Card(11, 'Spades', 'A'),Card(10, 'Hearts', 'J')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0099_AJ(self):
+    hand = [Card(11, 'Spades', 'A'),Card(10, 'Diamonds', 'J')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0100_AJ(self):
+    hand = [Card(11, 'Spades', 'A'),Card(10, 'Clubs', 'J')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0101_AJ(self):
+    hand = [Card(11, 'Hearts', 'A'),Card(10, 'Spades', 'J')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0102_AJ(self):
+    hand = [Card(11, 'Hearts', 'A'),Card(10, 'Hearts', 'J')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0103_AJ(self):
+    hand = [Card(11, 'Hearts', 'A'),Card(10, 'Diamonds', 'J')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0104_AJ(self):
+    hand = [Card(11, 'Hearts', 'A'),Card(10, 'Clubs', 'J')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0105_AJ(self):
+    hand = [Card(11, 'Diamonds', 'A'),Card(10, 'Spades', 'J')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0106_AJ(self):
+    hand = [Card(11, 'Diamonds', 'A'),Card(10, 'Hearts', 'J')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0107_AJ(self):
+    hand = [Card(11, 'Diamonds', 'A'),Card(10, 'Diamonds', 'J')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0108_AJ(self):
+    hand = [Card(11, 'Diamonds', 'A'),Card(10, 'Clubs', 'J')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0109_AJ(self):
+    hand = [Card(11, 'Clubs', 'A'),Card(10, 'Spades', 'J')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0110_AJ(self):
+    hand = [Card(11, 'Clubs', 'A'),Card(10, 'Hearts', 'J')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0111_AJ(self):
+    hand = [Card(11, 'Clubs', 'A'),Card(10, 'Diamonds', 'J')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0112_AJ(self):
+    hand = [Card(11, 'Clubs', 'A'),Card(10, 'Clubs', 'J')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0113_A10(self):
+    hand = [Card(11, 'Spades', 'A'),Card(10, 'Spades', '10')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0114_A10(self):
+    hand = [Card(11, 'Spades', 'A'),Card(10, 'Hearts', '10')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0115_A10(self):
+    hand = [Card(11, 'Spades', 'A'),Card(10, 'Diamonds', '10')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0116_A10(self):
+    hand = [Card(11, 'Spades', 'A'),Card(10, 'Clubs', '10')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0117_A10(self):
+    hand = [Card(11, 'Hearts', 'A'),Card(10, 'Spades', '10')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0118_A10(self):
+    hand = [Card(11, 'Hearts', 'A'),Card(10, 'Hearts', '10')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0119_A10(self):
+    hand = [Card(11, 'Hearts', 'A'),Card(10, 'Diamonds', '10')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0120_A10(self):
+    hand = [Card(11, 'Hearts', 'A'),Card(10, 'Clubs', '10')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0121_A10(self):
+    hand = [Card(11, 'Diamonds', 'A'),Card(10, 'Spades', '10')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0122_A10(self):
+    hand = [Card(11, 'Diamonds', 'A'),Card(10, 'Hearts', '10')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0123_A10(self):
+    hand = [Card(11, 'Diamonds', 'A'),Card(10, 'Diamonds', '10')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0124_A10(self):
+    hand = [Card(11, 'Diamonds', 'A'),Card(10, 'Clubs', '10')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0125_A10(self):
+    hand = [Card(11, 'Clubs', 'A'),Card(10, 'Spades', '10')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0126_A10(self):
+    hand = [Card(11, 'Clubs', 'A'),Card(10, 'Hearts', '10')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0127_A10(self):
+    hand = [Card(11, 'Clubs', 'A'),Card(10, 'Diamonds', '10')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
+def test_0128_A10(self):
+    hand = [Card(11, 'Clubs', 'A'),Card(10, 'Clubs', '10')]
+    answer = is_blackjack(hand)
+
+    self.assertEqual(answer, True)
+    
