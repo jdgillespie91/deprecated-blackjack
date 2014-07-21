@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 ## Functions ###
 
 class Card:
@@ -67,7 +68,81 @@ def get_number_of_hands(number_of_players):
 
 def do_deal(deck):
 
-def print_list_of_hands(list_of_hands):
+def generate_card_pictures(hand):
+    # Makes playing cards like so:
+    # ╔═══╗╔═══╗                  
+    # ║ 2 ║║ 5 ║                  
+    # ║ ♦ ║║ ♣ ║
+    # ╚═══╝╚═══╝
+    
+    line_card_top = u""    
+    line_card_rank = u""
+    line_card_suit = u""
+    line_card_bottom = u""
+
+    for card in hand:
+        line_card_top += u"╔═══╗"
+        line_card_rank += u"║ {0} ║".format(card.rank)
+        line_card_suit += u"║ {0} ║".format(card.suit)
+        line_card_bottom += u"╚═══╝"     
+ 
+    card_pictures = [line_card_top,line_card_rank,line_card_suit,line_card_bottom]
+    
+    return card_pictures
+
+def print_hands(list_of_hands):
+    number_of_players = get_number_of_players(list_of_hands)
+    dealer_hand = list_of_hands[number_of_players]
+
+    line_dealer_label = u""
+    line_dealer_hand = u""
+    line_player_hands = u""
+    line_player_labels = u""
+    line_current_player_arrows = u""
+    line_current_player_total = u"TOTAL: {0}"
+
+    player_strings = []
+    for player in range(number_of_players):
+        hand = list_of_hands[player]
+        player_cards_string = u""
+        
+        for card in hand:
+            player_cards_string += card.rank+card.suit
+            
+        player_strings.append("|"+player_cards_string+"|") # e.g |A♦2♣5♣|
+        
+    dealer_cards_string = u""
+    for card in dealer_hand:
+        dealer_cards_string += card.rank + card.suit
+
+    player_labels = []
+    for player in xrange(number_of_players):
+        player_string = player_strings[player]
+        player_label = ("P{0}".format(player)).center(len(player_string))
+        player_labels.append(player_label)
+
+        line_player_hands += player_string
+        line_player_labels += player_label
+
+    output_width = len(line_player_hands)
+
+    dealer_up_card_string = dealer_hand[0].rank + dealer_hand[0].suit
+    
+    line_dealer_label = "D".center(output_width)
+    line_dealer_hand = u"|{0} ?|".format(dealer_up_card_string) # e.g |A♦ ?|
+        
+    # card_pictures = generate_card_pictures(list_of_hands[current_player])
+
+    print
+    print "".center(output_width,'#')+"\n"
+    print line_dealer_label
+    print line_dealer_hand.center(output_width)
+    print "".center(output_width,'=')
+    print line_player_hands
+    print line_player_labels
+    print
+    print "".center(output_width,'#')
+    print
 
 def player_turn_manual(hand):
     STAND = 0

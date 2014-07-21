@@ -84,11 +84,17 @@ do_deal_deck(deck, number_of_players)
 - Returns a list of lists.
 - The outer list should contain number_of_players + 1 lists (don't forget the dealer!). The inner lists should each correspond to a hand and should contain 2 class Card instances. The first inner list should be player 1's hand, the second player 2's hand, and so on. The final inner list should be the dealer's hand.
 
-*** Ready to write ***
+*** Done ***
 print_hands(hands)
-- Takes a list of lists.
+- Takes a list of lists of Cards
 - No return value.
 - Prints the current state of the game; that is, it should print each player hand and the first of the dealer's two cards. The format of this print is entirely flexible but just bear in mind that it should be user-friendly.
+
+*** Done ***
+generate_card_pictures(hand)
+- Takes a list of cards
+- Returns an array of 4 unicode strings
+- Builds 4 strings which when printed in sequence make a picture of all the cards in the hand.
 
 *** Done ***
 do_player_turn_manual(hand)
