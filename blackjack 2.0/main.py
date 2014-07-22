@@ -252,6 +252,34 @@ def get_available_decisions(hand):
         #decisions.append(SPLIT)
 
     return decisions
+    
+def get_decision(hand):
+    if manual_flag:
+        available_decisions = get_available_decisions(hand)
+        available_integers = []
+            
+        undecided = True
+        while undecided:
+            print
+            print "Please choose an action:"
+            print
+            
+            for decision in available_decisions:
+                decision_number, decision_name = decision[0], decision[1]
+                print "{0}. {1}".format(decision_number, decision_name)
+                available_integers.append(decision_number)
+                
+            print
+            decision = raw_input("Enter choice number-->")
+            try:
+                decision = int(decision)
+                if decision in available_integers:
+                    return decision
+                else:
+                    print "Choice not available"
+            except ValueError:
+                print "Not an integer"
+        
 
 def do_determine_results(list_of_hands_totals):
 
