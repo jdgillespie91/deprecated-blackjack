@@ -126,13 +126,13 @@ do_hit(hand, deck)
 - Returns a list of class Card instances.
 - The first list is the hand and the second list is the deck. Takes the first card in the playing deck and appends it to hand. Returns hand. Note that we use append since we don't know the final length of hand and so cannot preassign its length. It might be worth considering preassigning its length to something large (presumably 21 should be its maximum length - 21 aces) but that may be costly in terms of storage and not save much time. This is a very minor issue though.
 
-*** Ready to write ***
+*** Done ***
 get_decision(hand)
 - Takes a list of class Card instances.
 - Returns an integer.
 - Takes a hand, determines the available decisions by calling get_available_decisions(hand), determines the decision to proceed with (in auto mode, this process still needs defining, but in manual mode, we'll just accept input from the terminal) and returns the integer corresponding to that decision. Currently, 0 corresponds to standing and 1 corresponds to hitting.
 
-*** Ready to write ***
+*** Done ***
 get_available_decisions(hand)
 - Takes a list of class Card instances.
 - Return a list of lists.
@@ -144,7 +144,7 @@ do_determine_results(hand_totals)
 - Returns a list of integers.
 - The input will be a list of integers that correspond to hand totals. The final integer is the dealer's total. Starting at the first element in the list, each element is compared to the final element and 0 is appended to a list of results if that element is "worse" (worse in the sense that it is a weaker hand in blackjack terms), 1 if it is the same, and 2 if it is stronger (i.e. loss, draw and win). The final list of results will be one element shorter than the input list. This list of results is returned and describes the outcome of the game.
 
-*** Ready to write ***
+*** Done ***
 get_hand_total(hand)
 - Takes a list of class Card instances.
 - Returns an integer.
