@@ -284,8 +284,10 @@ def get_decision(hand):
 def do_determine_results(list_of_hands_totals):
 
 def get_hand_total(hand):
-
-
+    total = 0
+    for card in hand:
+        total += card.value
+    return total
 
 ## Execution ###
 
