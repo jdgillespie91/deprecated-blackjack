@@ -169,8 +169,6 @@ def do_determine_results(list_of_hands_totals):
 
 def get_hand_total(hand):
 
-
-
 ## Execution ###
 
 play_blackjack(True)
