@@ -236,9 +236,22 @@ def is_blackjack(hand):
 def do_hit(hand, deck):
 
 def get_available_decisions(hand):
+    # we know that the player can not be bust now
+    # the only time he cannot hit is when he has 21
+    STAND = [0, 'Stand']
+    HIT = [1, 'Hit']
+    SPLIT = [2, 'Split']
+    decisions = [STAND] # one may stand at any time
+    
+    hand_total = get_hand_total(hand)
+    if hand_total < 21:
+        decisions.append(HIT)
 
-def get_decision:
-    available_decisions = get_available_decisions
+    # if splits are allowed include the following
+    #if len(hand) == 2 and hand[0].value == hand[1].value:
+        #decisions.append(SPLIT)
+
+    return decisions
 
 def do_determine_results(list_of_hands_totals):
 
