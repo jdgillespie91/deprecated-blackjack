@@ -273,7 +273,7 @@ def get_decision(hand):
         undecided = True
         while undecided:
             print
-            print "Please choose an action:"
+            print "Please choose an action: \n"
             print
             
             for decision in available_decisions:
