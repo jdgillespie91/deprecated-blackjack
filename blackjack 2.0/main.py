@@ -46,6 +46,18 @@ def get_number_of_players():
             print "Not an integer"
 
 def get_number_of_decks():
+    undecided = True
+    while undecided:
+        print
+        decision = raw_input("How many decks (1-8)? \n")
+        try:
+            decision = int(decision)
+            if decision in range(1,8):
+                return decision
+            else:
+                print "Choice not available"
+        except ValueError:
+            print "Not an integer"
 
 def get_number_of_automated_runs():
 
