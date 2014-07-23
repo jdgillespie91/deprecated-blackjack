@@ -108,13 +108,13 @@ do_player_turn_auto(hand)
 - Returns a positive integer.
 - Takes a hand and automatically determines decisions based on that hand (by calling the get_decision function).This continues until the player stands or is bust and then the total is returned.
 
-*** Ready to write ***
+*** Done ***
 do_dealer_turn(hand)
 - Takes a list of two class Card instances.
 - Returns a nonnegative integer.
 - Executes the dealer strategy as per casino rules. We use the "H17" strategy (dealer hits soft 17). Returns the total if it's between 17 and 21 (and not soft 17), a 0 if bust and a 1 if blackjack.
 
-*** Ready to write ***
+*** Done ***
 is_blackjack(hand)
 - Takes a list of two class Card instances.
 - Returns a boolean.
