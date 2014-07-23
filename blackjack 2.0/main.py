@@ -59,8 +59,6 @@ def get_number_of_decks():
         except ValueError:
             print "Not an integer"
 
-def get_number_of_automated_runs():
-
 def game(manual_flag, number_of_players, number_of_decks):
     deck = get_deck(number_of_decks)
     hands = do_deal_deck(deck, number_of_players)

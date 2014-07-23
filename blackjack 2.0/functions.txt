@@ -54,12 +54,6 @@ get_number_of_decks()
 - Returns a positive integer.
 - The function should accept user input, check that it is a valid input (make sure it is a sensible number) and return if so.
 
-*** Ready to write ***
-get_number_of_automated_runs()
-- Takes no arguments.
-- Returns a positive integer.
-- The function should accept user input, check that it is a valid input (make sure it is a sensble number) and return if so.
-
 *** Done *** 
 game(manual_flag, number_of_players, number_of_decks, number_of_automated_runs = 1)
 - manual_flag is a boolean, number_of_players and number_of_decks are positive integers, and number_of_automated_runs is a positive integer with default value 1.
