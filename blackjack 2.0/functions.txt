@@ -138,7 +138,7 @@ get_available_decisions(hand)
 - Return a list of lists.
 - Needs to look at the hand and determine what moves are legitimate and return this information. The information is returned in a list of lists where each inner list contains an integer corresponding to a decision and a string identifying what that decision is. Currently, 0 corresponds to standing and 1 corresponds to hitting. 
 
-*** Ready to write ***    
+*** Done ***    
 do_determine_results(hand_totals)
 - Takes a list of integers.
 - Returns a list of integers.
