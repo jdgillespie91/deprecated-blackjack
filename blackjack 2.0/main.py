@@ -32,6 +32,18 @@ def play_blackjack(manual_flag, number_of_games = 1):
             list_of_game_results[number_of_players*game, number_of_players*(game+1) - 1] = game_results # Assign game_results to earliest unassigned position in list_of_game_results.
 
 def get_number_of_players():
+    undecided = True
+    while undecided:
+        print
+        decision = raw_input("How many players (1-8)? \n")
+        try:
+            decision = int(decision)
+            if decision in range(1,8):
+                return decision
+            else:
+                print "Choice not available"
+        except ValueError:
+            print "Not an integer"
 
 def get_number_of_decks():
 
