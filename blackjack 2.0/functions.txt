@@ -42,7 +42,7 @@ play_blackjack(manual_flag, number_of_games)
 - Returns a list of integers.
 - manual_flag is True if manual mode is on and False if auto mode is on. number_of_games is the number of games to be executed. The list of integers returned indicate the results of every game (each element corresponds to a specific game and the list has number_of_games elements).
 
-*** Ready to write ***
+*** Done ***
 get_number_of_players()
 - Takes no arguments.
 - Returns a positive integer.
@@ -52,7 +52,7 @@ get_number_of_players()
 get_number_of_decks()
 - Takes no arguments.
 - Returns a positive integer.
-- The function should accept user input, check that it is a valid input (make sure it is a sensble number) and return if so.
+- The function should accept user input, check that it is a valid input (make sure it is a sensible number) and return if so.
 
 *** Ready to write ***
 get_number_of_automated_runs()
