@@ -305,7 +305,23 @@ def get_decision(hand):
                 print "Not an integer"
         
 
-def do_determine_results(list_of_hands_totals):
+def do_determine_results(list_of_hand_totals):
+    DEALER_WIN = 0
+    DRAW = 1
+    PLAYER_WIN = 2
+
+    results = []
+    dealer_total = list_of_hand_totals.pop()
+    
+    for player_total in list_of_hand_totals:
+        if player_total < dealer_total:
+            results.append(DEALER_WIN)
+        elif player_total == dealer_total:
+            results.append(DRAW)
+        elif player_total > dealer_total:
+            results.append(PLAYER_WIN)
+
+    return results
 
 def get_hand_total(hand):
     total = 0
