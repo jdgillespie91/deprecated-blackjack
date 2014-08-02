@@ -64,7 +64,7 @@ def game(manual_flag, number_of_players, number_of_decks):
     hands = do_deal_deck(deck, number_of_players)
     hand_totals = [0]*(number_of_players + 1) # number_of_players + 1 includes dealer.
 
-    for player_index in xrange(number_of_players)
+    for player_index in xrange(number_of_players):
         player_hand = hands[player_index]
         if manual_flag:
             player_total = do_player_turn_manual(player_hand)
