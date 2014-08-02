@@ -32,10 +32,32 @@ def play_blackjack(manual_flag, number_of_games = 1):
             list_of_game_results[number_of_players*game, number_of_players*(game+1) - 1] = game_results # Assign game_results to earliest unassigned position in list_of_game_results.
 
 def get_number_of_players():
+    undecided = True
+    while undecided:
+        print
+        decision = raw_input("How many players (1-8)? \n")
+        try:
+            decision = int(decision)
+            if decision in range(1,8):
+                return decision
+            else:
+                print "Choice not available"
+        except ValueError:
+            print "Not an integer"
 
 def get_number_of_decks():
-
-def get_number_of_automated_runs():
+    undecided = True
+    while undecided:
+        print
+        decision = raw_input("How many decks (1-8)? \n")
+        try:
+            decision = int(decision)
+            if decision in range(1,8):
+                return decision
+            else:
+                print "Choice not available"
+        except ValueError:
+            print "Not an integer"
 
 def game(manual_flag, number_of_players, number_of_decks):
     deck = get_deck(number_of_decks)
@@ -261,7 +283,7 @@ def get_decision(hand):
         undecided = True
         while undecided:
             print
-            print "Please choose an action:"
+            print "Please choose an action: \n"
             print
             
             for decision in available_decisions:
@@ -281,7 +303,23 @@ def get_decision(hand):
                 print "Not an integer"
         
 
-def do_determine_results(list_of_hands_totals):
+def do_determine_results(list_of_hand_totals):
+    DEALER_WIN = 0
+    DRAW = 1
+    PLAYER_WIN = 2
+
+    results = []
+    dealer_total = list_of_hand_totals.pop()
+    
+    for player_total in list_of_hand_totals:
+        if player_total < dealer_total:
+            results.append(DEALER_WIN)
+        elif player_total == dealer_total:
+            results.append(DRAW)
+        elif player_total > dealer_total:
+            results.append(PLAYER_WIN)
+
+    return results
 
 def get_hand_total(hand):
     total = 0

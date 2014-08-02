@@ -42,23 +42,17 @@ play_blackjack(manual_flag, number_of_games)
 - Returns a list of integers.
 - manual_flag is True if manual mode is on and False if auto mode is on. number_of_games is the number of games to be executed. The list of integers returned indicate the results of every game (each element corresponds to a specific game and the list has number_of_games elements).
 
-*** Ready to write ***
+*** Done ***
 get_number_of_players()
 - Takes no arguments.
 - Returns a positive integer.
 - The function should accept user input, check that it is a valid input (make sure it is a 'sensible' number) and return if so.
 
-*** Ready to write ***
+*** Done ***
 get_number_of_decks()
 - Takes no arguments.
 - Returns a positive integer.
-- The function should accept user input, check that it is a valid input (make sure it is a sensble number) and return if so.
-
-*** Ready to write ***
-get_number_of_automated_runs()
-- Takes no arguments.
-- Returns a positive integer.
-- The function should accept user input, check that it is a valid input (make sure it is a sensble number) and return if so.
+- The function should accept user input, check that it is a valid input (make sure it is a sensible number) and return if so.
 
 *** Done *** 
 game(manual_flag, number_of_players, number_of_decks, number_of_automated_runs = 1)
@@ -108,13 +102,13 @@ do_player_turn_auto(hand)
 - Returns a positive integer.
 - Takes a hand and automatically determines decisions based on that hand (by calling the get_decision function).This continues until the player stands or is bust and then the total is returned.
 
-*** Ready to write ***
+*** Done ***
 do_dealer_turn(hand)
 - Takes a list of two class Card instances.
 - Returns a nonnegative integer.
 - Executes the dealer strategy as per casino rules. We use the "H17" strategy (dealer hits soft 17). Returns the total if it's between 17 and 21 (and not soft 17), a 0 if bust and a 1 if blackjack.
 
-*** Ready to write ***
+*** Done ***
 is_blackjack(hand)
 - Takes a list of two class Card instances.
 - Returns a boolean.
@@ -138,7 +132,7 @@ get_available_decisions(hand)
 - Return a list of lists.
 - Needs to look at the hand and determine what moves are legitimate and return this information. The information is returned in a list of lists where each inner list contains an integer corresponding to a decision and a string identifying what that decision is. Currently, 0 corresponds to standing and 1 corresponds to hitting. 
 
-*** Ready to write ***    
+*** Done ***    
 do_determine_results(hand_totals)
 - Takes a list of integers.
 - Returns a list of integers.
